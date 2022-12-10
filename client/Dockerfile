@@ -5,11 +5,17 @@ FROM node:12-alpine
 #define the working directory
 WORKDIR /usr/src/app
 
-#copy the packages to the working directory
-COPY . .
+#copy package.json to working directory
+COPY package*.json /
 
 #install dependancies
 RUN npm install
+
+
+#copy the packages to the working directory
+COPY . .
+
+
 
 #RUN chmod +x /usr/src/app/npm start
 
