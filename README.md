@@ -1,26 +1,21 @@
-# Requirements
-Make sure that you have the following installed:
-- [node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
-- npm 
-- [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and start the mongodb service with `sudo service mongod start`
+##fork and clone the github repo given 
+link:https://github.com/Vinge1718/yolo
 
-## Navigate to the Client Folder 
- `cd client`
+##git clone the repo in terminal
+'git clone https://github.com/Vinge1718/yolo
 
-## Run the folllowing command to install the dependencies 
- `npm install`
+##install mongodb server locally 
 
-## Run the folllowing to start the app
- `npm start`
+##dockerise both frontend and backend by adding Dockerfile for both
 
-## Open a new terminal and run the same commands in the backend folder
- `cd ../backend`
+##add the Docker-compose file giving instructions as indicated in the Docker-compose file
 
- `npm install`
+ 
+##push the frontend and backend images to Dockerhub
+##Tagging of these images is requires to be able to successfully push them
 
- `npm start`
+##run the docker-compose up to run both application and mongodb database 
 
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+##add a product 
 
 
-## unable to connect the database string in the .env file successfully hence hard coded the credentials
