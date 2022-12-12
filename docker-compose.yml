@@ -5,7 +5,7 @@ services:
     image: my-backend-image:latest
     container_name: my-backend-container
     ports:
-      - '8000:8000'
+      - '5000:5000'
     networks:
       - my_network
 
@@ -18,7 +18,7 @@ services:
       - my_network
 
   mongo:
-    container_name: mongodb-container
+    container_name: mongodb-container2
     image: mongo:6.0.3  
     env_file: ./.env
     ports:
