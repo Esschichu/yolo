@@ -1,0 +1,48 @@
+# Project Title
+IP 2:Creating a Basic Microservice
+
+## Getting Started
+-Install node: 'npm install'
+-Install mongodb locally and start the mongodb service with `sudo service mongod start`
+-Navigate to client folder and install dependencies then start the service by 'node server'/'npm start' (same applies for backend)
+
+##Instructions
+Create a Dockerfile for both frontend and backend that contains all the commands a user could call on the command line to assemble an image as indicated in the files.
+
+Dockerfile:
+#Define the base image in our case alphine which offers small size image and vulnerabilities
+FROM node:12-alpine
+#define the working directory
+WORKDIR /usr/src/app
+#copy package.json to working directory
+COPY package*.json /
+#install dependancies
+RUN npm install
+#copy the packages to the working directory
+COPY . .
+#RUN chmod +x /usr/src/app/npm start
+#Expose port 3000 and port 5000 (for both frontend and backend)
+EXPOSE 3000
+#DEfine entry point
+CMD ["npm", "start"]
+
+Docker-compose file:
+A docker-compose.yml file is used to define and configure the services that make up an application in Docker. 
+It allows you to define multiple services, specify their dependencies, and configure their settings, such as the environment variables, volumes, and ports.
+The services availble are Client,backend and mongo each defined by image name,container_name and are linked together by my_network.
+The ports are clearly defined as well as the mongodb credentials set in the environment parameter.
+To build up the images, use;
+'docker-compose up' 
+ 
+ To push the images to docker hub:
+ Tag each image first i.e: docker tag my-backend-image achieng/my-backend-image
+                           docker tag my-frontend-image achieng/my-frontend-image
+
+the push the images:
+                            docker push achieng/my-backend-image
+                            docker push achieng/my-frontend-image
+
+This is the link to docker hub:
+                           https://hub.docker.com/repository/docker/achieng/my-frontend-image
+                           https://hub.docker.com/repository/docker/achieng/my-backend-image                                                       
+
