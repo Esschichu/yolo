@@ -46,3 +46,6 @@ This is the link to docker hub:
                            https://hub.docker.com/repository/docker/achieng/my-frontend-image
                            https://hub.docker.com/repository/docker/achieng/my-backend-image                                                       
 
+
+##Additional Instructions
+after running both the client and backend using the command 'docker-compose up',the product was added successfully and it persisted.
