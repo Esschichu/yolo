@@ -6,6 +6,11 @@ IP 2:Creating a Basic Microservice
 -Install mongodb locally and start the mongodb service with `sudo service mongod start`
 -Navigate to client folder and install dependencies then start the service by 'node server'/'npm start' (same applies for backend)
 
+##Instructions to set up mongodb
+Create a docker volume first i.e: docker volume create mongodb-data-vol
+
+Run it as a container: docker run -d --name mongodb-container2-v mongodb-data-vol:/data/db -p 27017:27017 mongo
+
 ##Instructions
 Create a Dockerfile for both frontend and backend that contains all the commands a user could call on the command line to assemble an image as indicated in the files.
 
@@ -26,13 +31,26 @@ EXPOSE 3000
 #DEfine entry point
 CMD ["npm", "start"]
 
+To create a docker image and container:
+Run the commands as follows: docker build -t my-frontend-image:latest .
+                             docker run -p 3000:3000 --name my-frontend-container my-frontend-image
+
+                             docker build -t my-backend-image:latest .
+                             docker run -p 3000:3000 --name my-backend-container my-backend-image
+
+
+The services availble are Client,backend and mongo each defined by image name,container_name and are linked together by my_network.
+
+To create and inspect the network use the command: docker network create my_network
+                                                   docker network inspect bride
+
 Docker-compose file:
 A docker-compose.yml file is used to define and configure the services that make up an application in Docker. 
 It allows you to define multiple services, specify their dependencies, and configure their settings, such as the environment variables, volumes, and ports.
 The services availble are Client,backend and mongo each defined by image name,container_name and are linked together by my_network.
 The ports are clearly defined as well as the mongodb credentials set in the environment parameter.
-To build up the images, use;
-'docker-compose up' 
+
+To build up the images, use;  docker-compose up 
  
  To push the images to docker hub:
  Tag each image first i.e: docker tag my-backend-image achieng/my-backend-image
