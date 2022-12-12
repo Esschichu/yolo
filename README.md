@@ -1,3 +1,6 @@
+N/B:
+DETAILED EXPLANATION ON explanation.md FILE
+
 ##fork and clone the github repo given 
 link:https://github.com/Vinge1718/yolo
 
