@@ -7,7 +7,7 @@ services:
     ports:
       - '8000:8000'
     networks:
-      - mynetwork
+      - my_network
 
   client:
     build: ./client
@@ -15,7 +15,7 @@ services:
     ports:
       - '3000:3000'
     networks:
-      - mynetwork
+      - my_network
 
   mongo:
     container_name: mongodb-container
