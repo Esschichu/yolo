@@ -3,7 +3,7 @@ services:
   backend:
     build: ./backend
     image: my-backend-image:latest
-      container_name:my-backend-container
+    container_name: my-backend-container
     ports:
       - '8000:8000'
     networks:
