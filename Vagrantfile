@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "base"
+  config.vm.box = "generic/centos7"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -67,4 +67,10 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+
+  #provisioning ansible
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yaml"
+end
+
 end
