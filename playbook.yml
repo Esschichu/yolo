@@ -1,0 +1,47 @@
+---
+
+  - name: Playbook
+    hosts: all
+    become: true
+    gather_facts: true
+    tasks:
+      #- name: Checkout repository
+        #shell: git clone https://github.com/Esschichu/yolo.git
+        
+
+      - name: Install dependencies
+        become: true
+        apt:
+          name: "{{ packages }}"
+          update_cache: yes
+        vars:
+          packages:
+            - nodejs
+            - npm
+        
+
+          
+        
+        
+      - name: Install dependencies
+        become: true
+        apt:
+          name: "{{ packages }}"
+        vars:
+          packages:
+            - react
+            - express
+
+      - name: Install dependencies
+        become: true
+        apt:
+          name: "{{ packages }}"
+        vars:
+          packages:
+            - mongodb
+
+      - name: run web application
+        become: true
+        command: npm start
+
+          
