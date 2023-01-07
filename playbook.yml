@@ -5,8 +5,16 @@
     become: true
     gather_facts: true
     tasks:
-      #- name: Checkout repository
-        #shell: git clone https://github.com/Esschichu/yolo.git
+
+      - name: check if path exits
+        stat: 
+          path: /home/vagrant/yolo
+        register: yolo_exists
+
+      - name: Checkout repository
+        shell: git clone https://github.com/Esschichu/yolo.git
+        when: not yolo_exists.stat.exists
+
         
 
       - name: Install dependencies
@@ -20,28 +28,32 @@
             - npm
         
 
-          
-        
-        
-      - name: Install dependencies
-        become: true
-        apt:
-          name: "{{ packages }}"
-        vars:
-          packages:
-            - react
-            - express
+      - name: Frontend install required modules in package.json
+        command: >
+          chdir=/home/vagrant/yolo/client/
+          npm install
+          npm start
+      
 
       - name: Install dependencies
         become: true
         apt:
           name: "{{ packages }}"
+          update_cache: yes
         vars:
           packages:
-            - mongodb
+            - mongodb-clients
 
-      - name: run web application
-        become: true
-        command: npm start
+
+
+      - name: Backend install required modules in package.json
+        command: >
+          chdir=/home/vagrant/yolo/backend/
+          npm install
+          npm start
+
+
+        
+
 
           
