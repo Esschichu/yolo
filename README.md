@@ -27,7 +27,9 @@ backend image: https://hub.docker.com/r/achieng/my-backend-image
 
 ##########################################################################################################################################################
 
-IP address:node-port
+External IP address:node-port
 
 to access the front-end link: http://192.168.49.2:32000
 backend link: http://192.168.49.2:30800
+
+
