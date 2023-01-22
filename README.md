@@ -25,4 +25,9 @@ link to dockerhub:https://hub.docker.com/repositories/achieng
 frontend image: https://hub.docker.com/r/achieng/my-frontend-image
 backend image: https://hub.docker.com/r/achieng/my-backend-image
 
+##########################################################################################################################################################
 
+IP address:node-port
+
+to access the front-end link: http://192.168.49.2:32000
+backend link: http://192.168.49.2:30800
