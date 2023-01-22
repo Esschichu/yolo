@@ -39,7 +39,7 @@ metadata:
   creationTimestamp: "2023-01-21T20:30:15Z"
   labels:
     app: backend
-   
+    
   name: web-backend
   namespace: default
   resourceVersion: "32015"
