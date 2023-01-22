@@ -22,5 +22,7 @@ link:https://github.com/Vinge1718/yolo
 ##add a product 
 
 link to dockerhub:https://hub.docker.com/repositories/achieng
+frontend image: https://hub.docker.com/r/achieng/my-frontend-image
+backend image: https://hub.docker.com/r/achieng/my-backend-image
 
 
