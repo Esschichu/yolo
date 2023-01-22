@@ -52,7 +52,7 @@ spec:
     targetPort: 5000
   selector:
     app: backend
-   
+
   sessionAffinity: None
   type: NodePort
 status:
