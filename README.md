@@ -1,3 +1,18 @@
+Detailed Explanation on container ochestration using GKE on the explanation.md file
+
+Accessible links: 
+   Front-end service: 
+            http://35.240.92.93:3000/
+
+    Backend-service:
+            http://34.22.141.53:80
+
+
+
+
+
+
+
 N/B:
 DETAILED EXPLANATION ON explanation.md FILE
 
@@ -25,11 +40,8 @@ link to dockerhub:https://hub.docker.com/repositories/achieng
 frontend image: https://hub.docker.com/r/achieng/my-frontend-image
 backend image: https://hub.docker.com/r/achieng/my-backend-image
 
-##########################################################################################################################################################
 
-External IP address:node-port
 
-to access the front-end link: http://192.168.49.2:32000
-backend link: http://192.168.49.2:30800
+
 
 

@@ -1,3 +1,62 @@
+## Project Title
+Ochestration using Google Kubernetes Engine
+
+## Project Details:
+Nodejs, Express API and MongoDB e-commerce feature project
+
+##Getting Started:
+- Login to your google cloud-shell using you google cloud account and set up the cluster in the project created.
+- Ensure the correct Region and zone is selected by following the below link: 
+      https://cloud.google.com/compute/docs/gcloud-compute
+- In the root folder of your project,create the Manifest_gke folder and within the folder,create the below files using the command below:
+    ~ Backend.yaml
+    ~ Client.yaml
+    ~ dbstorage.yaml
+    ~ yolopvc.yaml
+- To create each service, run the command
+  Front-end service:
+     kubectl expose deploy web --type=LoadBalancer --port=3000 --target-port=3000 --name=clientsvc
+
+  Backend-service:
+      kubectl expose deploy web-backend --type=LoadBalancer --port=80 --target-port=5000  --name=backendsvc   
+
+
+The services can then be accessed from the browser using external IP:port i.e:
+   Front-end service: 
+            http://35.240.92.93:3000/
+
+    Backend-service:
+            http://34.22.141.53:80
+
+## The set-Up
+
+We have 3 running pods namely:
+     ~ db-0
+     ~ web-backend
+     ~ web
+
+Two LoadBalancers and services used are plus the default one:
+     ~ service/backendsvc 
+     ~ service/clientsvc 
+     ~ service/mongodb    
+     ~ service/kubernetes 
+
+For deployment of database (dbstorage):
+      ~ statefulset.apps/db is used.  
+
+
+For Persistent volume claim where the deletion of the db-0 pod does not lead to the loss of items added to cart,check:
+      ~ yolopvc.yaml file         
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
 # Project Title
 IP 2:Creating a Basic Microservice
 
@@ -67,3 +126,5 @@ This is the link to docker hub:
 
 ##Additional Instructions
 after running both the client and backend using the command 'docker-compose up',the product was added successfully and it persisted.
+
+
