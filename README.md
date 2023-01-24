@@ -1,11 +1,12 @@
 Detailed Explanation on container ochestration using GKE on the explanation.md file
 
 Accessible links: 
+
    Front-end service: 
-            http://35.240.92.93:3000/
+        http://35.240.92.93:3000/
 
     Backend-service:
-            http://34.22.141.53:80
+        http://34.22.141.53:80/
 
 
 
