@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: achieng/my-backend-image
+        env:
+          - name: DB_HOST
+            value: "mongo"
+          - name: DB_USER
+            value: "admin"
+          - name: DB_PASSWORD
+            value: "password"
+        ports:
+        - containerPort: 5000
+          name: web-backend
